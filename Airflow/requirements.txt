@@ -1,0 +1,5 @@
+# Astro Runtime includes the following pre-installed providers packages: https://docs.astronomer.io/astro/runtime-image-architecture#provider-packages
+PySUS
+apache-airflow-providers-databricks==4.5.0
+azure-storage-file-datalake
+azure-identity
