@@ -135,7 +135,7 @@ def datasus_import():
 
         list_opr = ['DOAC2021.parquet', 'DOAC2020.parquet']
         # dir_names_to_transform = list_opr
-        dir_names_to_transform = [ {'notebook_params': {'dir_name': dir}} for dir in dir_names_to_transform ]
+        dir_names_to_transform = [ {'notebook_params': {'dir_name': dir}} for dir in dir_names_to_transform if '.parquet' in dir]
 
         return dir_names_to_transform
 
@@ -151,7 +151,7 @@ def datasus_import():
             task_id="Transform",
             databricks_conn_id="databricks",
             job_id=Variable.get('databricks_jobid'),
-            max_active_tis_per_dagrun=4).expand_kwargs(files_to_transform)
+            max_active_tis_per_dagrun=3).expand_kwargs(files_to_transform)
 
     
 
