@@ -34,10 +34,3 @@ CREATE TABLE IF NOT EXISTS datasus (
     ID VARCHAR(256) PRIMARY KEY
 );
 
---alter table datasus add primary key (ID);
-
-select * from datasus
---where ufarquivo <> 'RJ'
-
-select count(*) from datasus;
-drop table datasus;

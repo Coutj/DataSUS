@@ -151,7 +151,7 @@ def datasus_import():
             task_id="Transform",
             databricks_conn_id="databricks",
             job_id=Variable.get('databricks_jobid'),
-            max_active_tis_per_dagrun=3).expand_kwargs(files_to_transform)
+            max_active_tis_per_dagrun=2).expand_kwargs(files_to_transform)
 
     
 
