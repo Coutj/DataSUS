@@ -16,7 +16,7 @@ from airflow.models import Variable
 )
 def datasus_import():
     
-    @task(task_id='Get_List')
+    @task(task_id='GetList')
     def get_files_list():
         import json
         from include.adls_helper import ADLS
@@ -37,9 +37,6 @@ def datasus_import():
         
         full_list_uf_years = list(product(list_ufs, years))
         
-        # list_ufs = ['RJ']
-        # full_list_uf_years = [2019]
-
 
         adls_helper = ADLS(account_name, sas_token, 'datasus-data')
         dir_list = adls_helper.list_directory_contents('raw')
@@ -50,9 +47,7 @@ def datasus_import():
         files_to_download = list(set(full_list_uf_years) - set(list_uf_year_in_adls))
         files_to_download.sort()
 
-        # print(files_to_download)
-
-        files_to_download = [('RJ', 2021)]
+        print(files_to_download)
 
         return files_to_download
 
@@ -67,7 +62,7 @@ def datasus_import():
 
         for uf, year in files_to_download:
             print(f"UF: {uf} - Year: {year}")
-            parquet_path = SIM.download(groups='cid10', states=uf, years=year, data_dir=temp_dir)
+            parquet_path = SIM.download(groups='CID10', states=uf, years=year, data_dir=temp_dir)
             print(f"File Downloaded: {parquet_path}")
 
         return temp_dir
@@ -111,7 +106,6 @@ def datasus_import():
     def get_files_to_transform():
         import json
         from include.adls_helper import ADLS
-        from itertools import product
         from pathlib import Path
 
         # ADLS connection parameters
