@@ -1,5 +1,7 @@
 # DATASUS Pipeline
 
+A pipeline project to handle DATASUS SIM data.
+
 _This project is a part of my learning process in the data engineering field. However, it was built as an exercise and is not intended for production use._
 
 In this project we can extract data from the Brazilian Unified Healthcare System (SUS), load all this massive information into a data lake, and then execute the processing step to format the dataset (a classic ELT approach).
