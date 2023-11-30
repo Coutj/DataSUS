@@ -6,7 +6,7 @@ _This project is part of my learning process in the data engineering field. Howe
 
 In this project we can extract data from the Brazilian Unified Healthcare System (SUS), load all this massive information into a data lake, and then execute the processing step to format the dataset (a classic ELT approach).
 
-To get more details, check out [my post](https://medium.com/@coutj/datasus-pipeline-a2be4833e656) on Medium.
+To get more details, check out [my post](https://medium.com/@coutj/datasus-pipeline-a2be4833e656?source=friends_link&sk=e1ae0cbb6208e4944e8b77ecc32a1fc8) on Medium.
 
 ## Key Components
 
